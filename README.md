@@ -84,7 +84,7 @@ You also can install sonarqube-verify It starts the code analsys and then checks
 
 It can be useful if you create a command for this in the project's package.json:
 
-```json
+```text
 {
   ...
   "scripts": {
