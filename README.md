@@ -23,7 +23,7 @@ services:
       - '9092:9092'
 ```
 
-You can start and Stop SonarCube by thse commands:
+You can start and stop SonarCube by these commands:
 
     # Start it ...
     docker-compose -f docker-compose.sonar.yml up -d
@@ -34,12 +34,12 @@ You can start and Stop SonarCube by thse commands:
 
 You can reach the admin site on http://localhost:9000 You can also open the admin panel directly on this URL http://localhost:9000/dashboard use admin/admin to login. After the first login it will ask password changing.
 
-**Note that the local SonarQube instance uses in-memory data storage**. So if you restart the Docker contaioner it will lost the settings and user details you added to its settings.
+**Note that the local SonarQube instance uses in-memory data storage**. So if you restart the Docker container it will lose the settings and user details you added to its settings.
 
 
 ## Run SonarQube Analysis
 
-You should create a file named sonar-project.properties in your project's root directory. It content can be something similar:
+You should create a file named sonar-project.properties in your project's root directory. Its content can be something similar:
 
 ```text
 sonar.projectKey=secure-typescript-boilerplate
@@ -55,11 +55,11 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info
 sonar.testExecutionReportPaths=coverage/test-reporter.xml
 ```
 
-Now, you need to install the SonarQube scanner. It is an NPM package you can easyli add it to your project:
+Now, you need to install the SonarQube scanner. It is an NPM package you can easily add to your project:
 
     npm install --save-dev sonarqube-scanner 
 
-You should create a new JavaScript file in your's project root. Its name should be sonar-project.js Its content can be simething like this:
+You should create a new JavaScript file in your's project root. Its name should be sonar-project.js Its content can be something like this:
 
 ```javascript
 const sonarqubeScanner = require('sonarqube-scanner');
@@ -76,13 +76,12 @@ sonarqubeScanner(
 );
 ```
 
-
-Now you can run **sonarqube-scanner** with `node sonar-project.js` and this will submit our code sonar server. By default, the local server is used, but this can be overriden via environment variables. Go on and test it to make sure it works.
+Now you can run **sonarqube-scanner** with `node sonar-project.js`, which will submit our code sonar server. The local server is used by default, but this can be overridden via environment variables. Go on and test it to make sure it works.
 
  
-You also can install sonarqube-verify It starts the code analsys and then checks its progress every few seconds. On completion, it either suceeds or fails based on the analysis result.
+You also can install sonarqube-verify. It starts the code analysis and then checks its progress every few seconds. On completion, it either succeeds or fails based on the analysis result.
 
-It can be useful if you create a command for this in the project's package.json:
+It can be helpful if you create a command for this in the project's package.json:
 
 ```text
 {
@@ -103,7 +102,6 @@ npm test
 # Run the analysis (remember to start SonarQube)
 npm run sonar
 
-# Visit http://localhost:9000/projects to see result 
+# Visit http://localhost:9000/projects to see the result 
 # login with admin/admin
 ```
-
