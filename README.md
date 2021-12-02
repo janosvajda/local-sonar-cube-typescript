@@ -12,7 +12,7 @@
 
 3. Create a docker-compose.sonar.yml file:
 
-```json
+```text
 version: '3'
 services:
   sonarqube:
@@ -41,7 +41,7 @@ You can reach the admin site on http://localhost:9000 You can also open the admi
 
 You should create a file named sonar-project.properties in your project's root directory. It content can be something similar:
 
-```json
+```text
 sonar.projectKey=secure-typescript-boilerplate
 sonar.projectName=secure-typescript-boilerplate
 sonar.projectVersion=1.0
